@@ -3,6 +3,9 @@ This some boiler plate code for the DonInf2 course project. Use this code as sta
 
 GAAAAB WAYYYY
 
+je suis CINDY HELLO
+
+
 
 ## Setup
 ### 1. Repository On Github
