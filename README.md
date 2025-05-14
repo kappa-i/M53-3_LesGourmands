@@ -23,6 +23,8 @@ If you want to learn command line tools as well, you can install the git command
 
 #### 2.2 Repository local setup
 
+BONJOUUUUUR
+
 An easy option is to use the Github Desktop application
 - Download the app and install it
 - Open it and log in with your github account
