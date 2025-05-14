@@ -64,3 +64,5 @@ A few string manipulation examples are found in the `src/exemples` folder and ca
 Feel free to edit this README as well, it's yours :)
 The format of this file is [markdown](https://markdownlivepreview.com/)
 
+Modification de GAAAAB
+
