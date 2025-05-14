@@ -7,6 +7,9 @@ je suis CINDY HELLO
 
 
 
+
+
+La mala est gangxx
 ## Setup
 ### 1. Repository On Github
 First you need to get a copy of this repository, the best approach is to fork this repository. a fork is a github specific functionality, it creates your own copy of a repository. You need a github account in order to fork a repository.
