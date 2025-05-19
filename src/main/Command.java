@@ -1,6 +1,6 @@
 package main;
 
-public class Command {
+public abstract class Command {
     private String name;
     private String description;
 
