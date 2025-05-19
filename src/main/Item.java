@@ -9,20 +9,21 @@ public abstract class Item {
     }
 
     //Méthodes
+    
+    public String getItem(){
+        return this.name;
+    }
+
     public boolean canBeInspected() {
         return true;
     };
 
     public String inspect(){
-
-    };
-
-    public String addToInventory(String name){
-        inventory.add(this.name);
+        return "lol";
     };
 
     public void drop (){
-        
+
     };
     
 }
