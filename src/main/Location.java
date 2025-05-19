@@ -12,4 +12,6 @@ public class Location {
             return this.name;
         }
     }
+
+        public String getLocat
 }   
