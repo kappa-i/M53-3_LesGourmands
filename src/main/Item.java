@@ -4,7 +4,7 @@ public abstract class Item {
 
     String name;
     
-    public Item (String name){
+    private Item (String name){
         this.name = name;
     }
 
@@ -12,7 +12,7 @@ public abstract class Item {
     
     public String getItem(){
         return this.name;
-    }
+    };
 
     public boolean canBeInspected() {
         return true;
