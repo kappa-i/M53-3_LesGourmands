@@ -4,7 +4,7 @@ public abstract class Item {
 
     String name;
     
-    private Item (String name){
+    protected Item (String name){
         this.name = name;
     }
 
