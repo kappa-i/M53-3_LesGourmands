@@ -4,7 +4,7 @@ public class WorldMap {
     Location playerLocation;
 
     public WorldMap (int row, int column) {
-        grid = new Location [rows] [columns];
+        grid = new Location [rows][columns];
     }
 
     public Location getLocation (int row, int column){
