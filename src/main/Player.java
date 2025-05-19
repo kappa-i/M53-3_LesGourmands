@@ -1,5 +1,6 @@
 package main;
 
+import java.lang.reflect.AccessFlag.Location;
 import java.util.ArrayList;
 
 public class Player {
@@ -8,6 +9,24 @@ public class Player {
 
 
     //Méthode
-    addItem(String item);
+    public void addItem(String item){
+
+    }
+
+    public void removeItem(String item){
+
+    }
+
+    public void MoveToLocation(Location location){
+
+    }
+
+    public void OpenMap(){
+
+    }
+
+    public void openInventory(){
+
+    }
 
 }
