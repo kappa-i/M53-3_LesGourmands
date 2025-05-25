@@ -1,29 +1,33 @@
+package main;
+
 public class WorldMap {
 
-    Location [][] grid;
-    Location playerLocation;
+    private int [][] locationGrid;
+    private int playerLocation;
+
 
     public WorldMap (int row, int column) {
-        grid = new Location [rows][columns];
+        locationGrid = new int [row] [column];
     }
 
-    public Location getLocation (int row, int column){
-        return grid [rows] [columns];
+    public int getLocation (int row, int column){
+        return locationGrid [row] [column];
     }
     
-    public addLocation (Location location, int row, int column){
-        grid [row][column] = location;
+    public void addLocation (int value, int row, int column){
+        locationGrid [row][column] = value;
     }
 
-    public Location getPlayerlocation (){
+    public int getPlayerlocation (){
         return playerLocation;
     }
 
-    public setPlayerLocation(Location location){
+    public void  setPlayerLocation(int location){
         this.playerLocation = location;
     }
 
     public void setitemLocation (int row, int column){
-
+        locationGrid [row][column] = 0;
     }
 }
+
