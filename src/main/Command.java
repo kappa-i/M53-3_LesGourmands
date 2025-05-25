@@ -1,5 +1,4 @@
 package main;
-
 public abstract class Command {
     protected String name;
     protected String description;
@@ -9,7 +8,16 @@ public abstract class Command {
         this.description = description;
     }
 
-    public abstract void execute(String input);
+    // Méthode que chaque commande devra définir
+    public abstract void execute(String[] args);
+
+    public String getName() {
+        return name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
 }
 
 

@@ -1,27 +1,29 @@
 package main;
 
 public class Take extends Command {
-    private WorldMap worldMap;
     private Player player;
+    private WorldMap map;
 
-    public Take(WorldMap worldMap, Player player) {
-        super("take", "Take an object.");
-        this.worldMap = worldMap;
+    public Take(String name, String description, Player player, WorldMap map) {
+        super("take", "Ramasse un objet dans la pièce");
         this.player = player;
+        this.map = map;
     }
 
     @Override
-    public void execute(String input) {
-        Location current = worldMap.getPlayerLocation();
-        if (current.containObject(input)) {
-            Item item = current.removeObject(input);
-            player.addItem(item);
-            System.out.println("You picked up the " + input);
+    public void execute(String[] args) {
+        Location currentLocation = map.getPlayerLocation();
+        if (currentLocation.getItems().isEmpty()) {
+            System.out.println("Il n'y a rien à prendre ici.");
         } else {
-            System.out.println("That item is not here.");
+            Item item = currentLocation.getItems().get(0); // Prend le premier objet
+            player.addItem(item);
+            currentLocation.removeItem(item);
+            System.out.println("Vous avez pris : " + item.getName());
         }
     }
 }
+
 
 
 /* public class Take {

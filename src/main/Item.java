@@ -2,36 +2,28 @@ package main;
 
 public abstract class Item {
     protected String name;
-    protected boolean canBeInspected;
+    protected String description;
+    protected boolean inInventory;
 
-    public Item(String name, boolean canBeInspected) {
+    public Item(String name, String description) {
         this.name = name;
-        this.canBeInspected = canBeInspected;
-    }
-
-    public boolean canBeInspected() {
-        return canBeInspected;
-    }
-
-    public String inspect() {
-        if (canBeInspected) {
-            return "You inspect the " + name + ". It looks interesting.";
-        } else {
-            return "You can't inspect the " + name + ".";
-        }
-    }
-
-    public void addToInventory() {
-        System.out.println(name + " added to your inventory.");
-    }
-
-    public void drop() {
-        System.out.println(name + " dropped.");
+        this.description = description;
+        this.inInventory = false;
     }
 
     public String getName() {
         return name;
     }
+
+    public void addToInventory() {
+        inInventory = true;
+    }
+
+    public boolean canBeInspected() {
+        return true;
+    }
+
+    public abstract String inspect();
 }
 
 

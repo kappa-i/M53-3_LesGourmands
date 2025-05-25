@@ -1,20 +1,13 @@
 package main;
 
 public class Letter extends Item {
-    private String solution;
-
-    public Letter(String name, String solution) {
-        super(name, true);
-        this.solution = solution;
+    public Letter(String name, String description) {
+        super(name, description);
     }
 
     @Override
     public String inspect() {
-        return "The letter says: " + solution;
-    }
-
-    public String getSolution() {
-        return solution;
+        return "Lettre : " + description;
     }
 }
 

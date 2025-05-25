@@ -1,35 +1,26 @@
 package main;
 
 public class Move extends Command {
-    private WorldMap worldMap;
     private Player player;
+    private WorldMap worldMap;
 
-    public Move(WorldMap worldMap, Player player) {
-        super("move", "Move to another location.");
-        this.worldMap = worldMap;
+    public Move(String name, String description, Player player, WorldMap map) {
+        super("move", "Déplace le joueur dans une direction");
         this.player = player;
+        this.worldMap = map;
     }
 
     @Override
-    public void execute(String input) {
-        // Simule un mouvement vers un autre lieu
-        System.out.println("You try to move somewhere...");
-
-        // Pour simplifier : on déplace vers une autre position fixe (exemple)
-        Location newLoc = worldMap.getLocation(0, 1);
-        if (!newLoc.isLocked()) {
-    player.moveToLocation(newLoc);
-} else {
-    System.out.println("Zone locked");
+    public void execute(String[] args) {
+        if (args.length < 2) {
+            System.out.println("Usage: move <north|south|east|west>");
+            return;
+        }
+        String direction = args[1];
+        if (!worldMap.movePlayer(direction)) {
+            System.out.println("Impossible d'aller là !");
+        }
+    }
 }
 
-    
-}
 
-/*
- * public class Move {
- * 
- * public void movePlayerAround();
- * 
- * }
- */

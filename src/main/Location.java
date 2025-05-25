@@ -6,59 +6,36 @@ public class Location {
     private String name;
     private String description;
     private boolean isLocked;
-    private ArrayList<Item> objects; // objets présents dans ce lieu
+    private ArrayList<Item> items;
 
     public Location(String name, String description, boolean isLocked) {
         this.name = name;
         this.description = description;
         this.isLocked = isLocked;
-        this.objects = new ArrayList<>();
+        this.items = new ArrayList<>();
     }
 
-    public void unlock() {
-        isLocked = false;
-    }
-
-    public void lock() {
-        isLocked = true;
-    }
-
-    public boolean isLocked() {
-        return isLocked;
+    public String getName() {
+        return name;
     }
 
     public String getDescription() {
         return description;
     }
 
-    public void addObject(Item item) {
-        objects.add(item);
+    public boolean isLocked() {
+        return isLocked;
     }
 
-    public boolean containObject(String itemName) {
-        for (Item item : objects) {
-            if (item.getName().equalsIgnoreCase(itemName)) {
-                return true;
-            }
-        }
-        return false;
+    public ArrayList<Item> getItems() {
+        return items;
     }
 
-    public Item removeObject(String itemName) {
-        for (Item item : objects) {
-            if (item.getName().equalsIgnoreCase(itemName)) {
-                objects.remove(item);
-                return item;
-            }
-        }
-        return null;
+    public void addItem(Item item) {
+        items.add(item);
     }
 
-    public ArrayList<Item> getObjects() {
-        return objects;
-    }
-
-    public String getName() {
-        return name;
+    public void removeItem(Item item) {
+        items.remove(item);
     }
 }
