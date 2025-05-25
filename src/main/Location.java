@@ -6,13 +6,13 @@ public class Location {
     private String name;
     private String description;
     private boolean isLocked;
-    private ArrayList<Item> items;
+    private ArrayList<Item> objects; // objets présents dans ce lieu
 
     public Location(String name, String description, boolean isLocked) {
         this.name = name;
         this.description = description;
         this.isLocked = isLocked;
-        this.items = new ArrayList<>();
+        this.objects = new ArrayList<>();
     }
 
     public void unlock() {
@@ -31,29 +31,34 @@ public class Location {
         return description;
     }
 
+    public void addObject(Item item) {
+        objects.add(item);
+    }
+
     public boolean containObject(String itemName) {
-        for (Item item : items) {
-            if (item.name.equals(itemName)) return true;
+        for (Item item : objects) {
+            if (item.getName().equalsIgnoreCase(itemName)) {
+                return true;
+            }
         }
         return false;
     }
 
-    public void addItem(Item item) {
-        items.add(item);
-    }
-
-    public Item removeItem(String name) {
-        for (Item item : items) {
-            if (item.name.equals(name)) {
-                items.remove(item);
+    public Item removeObject(String itemName) {
+        for (Item item : objects) {
+            if (item.getName().equalsIgnoreCase(itemName)) {
+                objects.remove(item);
                 return item;
             }
         }
         return null;
     }
 
-    public ArrayList<Item> getItems() {
-        return items;
+    public ArrayList<Item> getObjects() {
+        return objects;
+    }
+
+    public String getName() {
+        return name;
     }
 }
-

@@ -1,31 +1,32 @@
 package main;
 
-
 import java.util.ArrayList;
 
 public class Help extends Command {
     private ArrayList<String> helpInfo;
 
     public Help() {
-        this.name = "help";
+        super("help", "Displays help information.");
         helpInfo = new ArrayList<>();
-        helpInfo.add("help - Show available commands");
-        helpInfo.add("move - Move to a new location");
-        helpInfo.add("inspect - Inspect an item");
-        helpInfo.add("take - Take an item");
-    }
-
-    public void displayHelpInfo() {
-        for (String info : helpInfo) {
-            System.out.println(info);
-        }
+        helpInfo.add("help - show commands");
+        helpInfo.add("move - move to a location");
+        helpInfo.add("inspect - inspect an object");
+        helpInfo.add("take - take an object");
     }
 
     @Override
     public void execute(String input) {
         displayHelpInfo();
     }
+
+    public void displayHelpInfo() {
+        System.out.println("Available commands:");
+        for (String info : helpInfo) {
+            System.out.println(info);
+        }
+    }
 }
+
 
 /* import java.util.ArrayList;
 

@@ -1,20 +1,23 @@
 package main;
 
 public class Inspect extends Command {
-    private Player player;
+    private WorldMap worldMap;
 
-    public Inspect(Player player) {
-        this.name = "inspect";
-        this.player = player;
-    }
-
-    public void inspectObject() {
-        player.interactWithItems();
+    public Inspect(WorldMap worldMap) {
+        super("inspect", "Inspect an object.");
+        this.worldMap = worldMap;
     }
 
     @Override
     public void execute(String input) {
-        inspectObject();
+        Location current = worldMap.getPlayerLocation();
+        for (Item item : current.getObjects()) {
+            if (item.getName().equalsIgnoreCase(input)) {
+                System.out.println(item.inspect());
+                return;
+            }
+        }
+        System.out.println("No such item found.");
     }
 }
 

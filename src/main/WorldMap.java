@@ -4,16 +4,16 @@ public class WorldMap {
     private Location[][] grid;
     private Location playerLocation;
 
-    public WorldMap(int rows, int cols) {
-        grid = new Location[rows][cols];
+    public WorldMap(int rows, int columns) {
+        grid = new Location[rows][columns];
     }
 
-    public Location getLocation(int row, int col) {
-        return grid[row][col];
+    public void addLocation(Location location, int row, int column) {
+        grid[row][column] = location;
     }
 
-    public void addLocation(Location location, int row, int col) {
-        grid[row][col] = location;
+    public Location getLocation(int row, int column) {
+        return grid[row][column];
     }
 
     public Location getPlayerLocation() {
@@ -21,11 +21,11 @@ public class WorldMap {
     }
 
     public void setPlayerLocation(Location location) {
-        playerLocation = location;
+        this.playerLocation = location;
     }
 
-    public void setItemLocation(int row, int col) {
-        playerLocation = grid[row][col];
+    public void setItemLocation(int row, int column) {
+        this.playerLocation = grid[row][column];
     }
 }
 
