@@ -2,8 +2,8 @@ package main;
 
 public class Puzzle extends Item {
 
-    public Puzzle(String name) {
-        this.name = name;
+    public Puzzle(String name, String description) {
+        super(name, description);
     }
 
     @Override
@@ -23,7 +23,7 @@ public class Puzzle extends Item {
 
     @Override
     public void drop() {
-        System.out.println(name + " dropped.");
+        System.out.println(name+ " dropped.");
     }
 }
 
