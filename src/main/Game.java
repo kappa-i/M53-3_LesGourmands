@@ -3,6 +3,11 @@ package main;
 
 public class Game {
 
+    WorldMap map;
+    Player player;
+    Command[] commands;
+
+
     public Game(){
         System.out.println("Initializing game...");
     }

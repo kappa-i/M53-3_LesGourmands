@@ -1,6 +1,16 @@
 package main;
 
 public abstract class Item {
+    protected String name;
+
+    public abstract boolean canBeInspected();
+    public abstract String inspect();
+    public abstract void addToInventory();
+    public abstract void drop();
+}
+
+/*
+public abstract class Item {
 
     String name;
     
@@ -9,7 +19,6 @@ public abstract class Item {
     }
 
     //Méthodes
-    
     public String getItem(){
         return this.name;
     };
@@ -26,4 +35,7 @@ public abstract class Item {
 
     };
     
-}
+}*/
+   
+
+

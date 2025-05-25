@@ -2,6 +2,14 @@ package main;
 
 public abstract class Command {
     protected String name;
+    protected String description;
+
+    public abstract void execute(String input);
+}
+
+/*
+ public abstract class Command {
+    protected String name;
 
     protected String description;
 
@@ -15,3 +23,4 @@ public abstract class Command {
 
     public void execute();
 }
+ */
