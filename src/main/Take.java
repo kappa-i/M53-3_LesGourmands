@@ -4,11 +4,12 @@ public class Take extends Command {
     private Player player;
     private WorldMap map;
 
-    public Take(String name, String description, Player player, WorldMap map) {
-        super("take", "Ramasse un objet dans la pièce");
-        this.player = player;
-        this.map = map;
-    }
+    public Take(Player player, WorldMap map) {
+    super("take", "Ramasse un objet dans la pièce");
+    this.player = player;
+    this.map = map;
+}
+
 
     @Override
     public void execute(String[] args) {

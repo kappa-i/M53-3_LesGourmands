@@ -1,7 +1,6 @@
 
 package main;
 import java.util.Scanner;
-import main.CommandRegistry;
 
 
 
