@@ -25,16 +25,18 @@ public class Game {
         commandRegistry.registerCommand(new Move(player, worldMap));
         commandRegistry.registerCommand(new Inspect(player));
         commandRegistry.registerCommand(new Take(player, worldMap));
+        commandRegistry.registerCommand(new ShowMap(worldMap));
+
     }
 
     public void run() {
         System.out.println("Welcome to the Adventure Game!");
         Scanner scanner = new Scanner(System.in);
-
         while (true) {
             System.out.print("> ");
             String input = scanner.nextLine();
             commandRegistry.executeCommand(input);
+            /*objet qui connaît toutes les commandes du jeu (move, look, help, etc.) */
         }
     }
 }
