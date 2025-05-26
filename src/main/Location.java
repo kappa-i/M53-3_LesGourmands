@@ -2,7 +2,9 @@ package main;
 
 import java.util.ArrayList;
 
-public class Location {
+import utils.IPrintable;
+
+public class Location implements IPrintable{
     private String name;
     private String description;
     private boolean isLocked;
@@ -38,4 +40,15 @@ public class Location {
     public void removeItem(Item item) {
         items.remove(item);
     }
+
+    @Override
+    public String getPrintableString() {
+        return this.getName();
+    }
+
+    @Override
+    public boolean isGrayedOut() {
+        return isLocked;
+    }
+
 }
