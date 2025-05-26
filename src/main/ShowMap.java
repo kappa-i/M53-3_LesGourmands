@@ -1,17 +1,22 @@
 package main;
 
-import utils.Array2DPrinter;
+import utils.*;
 
 public class ShowMap extends Command {
     private WorldMap worldMap;
 
     public ShowMap(WorldMap worldMap) {
-        super("map", "Affiche la carte du monde");
+        super("map", "Affiche la carte du mmaponde");
         this.worldMap = worldMap;
     }
 
     @Override
     public void execute(String[] args) {
-        Array2DPrinter.print2DArray(worldMap.getPrintableMap());
+        Array2Dprinter.print2DArray(worldMap.getPrintableMap(),0,0);
+
+        System.out.println(Array2Dprinter.print2DArray(worldMap.getPrintableMap(),0,0));
     }
+
+    
 }
+
