@@ -23,7 +23,13 @@ public abstract class Item {
         return true;
     }
 
+    public void drop() {
+    
+    }
+
     public abstract String inspect();
+
+
 }
 
 
