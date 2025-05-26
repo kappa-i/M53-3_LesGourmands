@@ -1,46 +1,39 @@
 package main;
 
-import java.lang.reflect.AccessFlag.Location;
 import java.util.ArrayList;
 
 public class Player {
-    
-    ArrayList<String> inventory = new ArrayList<>();
+    private ArrayList<Item> inventory = new ArrayList<>();
 
+    // Ajoute un objet à l'inventaire
+    public void addItem(Item item) {
+        inventory.add(item);
+        item.addToInventory();
+    }
 
-    //Méthode
-    public void addItem(String item){
-        if(!inventory.contains(item)){
-            inventory.add(item);
-            System.out.println(item + " a été ajouté à l'inventaire.");
-        } else {
-            System.out.println(item + " est déjà dans l'inventaire.");
+    // Supprime un objet de l'inventaire
+    public void removeItem(String itemName) {
+        inventory.removeIf(item -> item.getName().equals(itemName));
+    }
+
+    // Affiche le nouvel emplacement du joueur
+    public void moveToLocation(Location location) {
+        System.out.println("You moved to: " + location.getDescription());
+    }
+
+    // Affiche les objets de l'inventaire
+    public void openInventory() {
+        for (Item item : inventory) {
+            System.out.println("- " + item.getName());
         }
     }
 
-    public void removeItem(String item){
-        if(inventory.contains(item)){
-            inventory.remove(item);
-            System.out.println(item + " a été retiré de l'inventaire.");
-        } else {
-            System.out.println(item + " n'est pas dans l'inventaire.");
+    // Permet d'inspecter les objets inspectables
+    public void interactWithItems() {
+        for (Item item : inventory) {
+            if (item.canBeInspected()) {
+                System.out.println(item.inspect());
+            }
         }
     }
-
-    public void MoveToLocation(Location location){
-        if (!location.) {
-            System.out.println("Vous vous déplacez vers : " + location.getLocationName());
-        } else{
-            System.out.println("La zone est bloquée");
-        }
-    }
-
-    public void OpenMap(){
-
-    }
-
-    public void openInventory(){
-
-    }
-
 }

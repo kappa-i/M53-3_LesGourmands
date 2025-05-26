@@ -1,33 +1,49 @@
 package main;
 
 public class WorldMap {
+    private Location[][] map;
+    private int width, height;
+    private int playerX = 0, playerY = 0;
 
-    private int [][] locationGrid;
-    private int playerLocation;
-
-
-    public WorldMap (int row, int column) {
-        locationGrid = new int [row] [column];
+    public WorldMap(int width, int height) {
+        this.width = width;
+        this.height = height;
+        map = new Location[height][width];
     }
 
-    public int getLocation (int row, int column){
-        return locationGrid [row] [column];
-    }
-    
-    public void addLocation (int value, int row, int column){
-        locationGrid [row][column] = value;
+    public void addLocation(Location location, int x, int y) {
+        map[y][x] = location;
     }
 
-    public int getPlayerlocation (){
-        return playerLocation;
+    public Location getPlayerLocation() {
+        return map[playerY][playerX];
     }
 
-    public void  setPlayerLocation(int location){
-        this.playerLocation = location;
+    public void setPlayerLocation(Location location) {
+        map[playerY][playerX] = location;
     }
 
-    public void setitemLocation (int row, int column){
-        locationGrid [row][column] = 0;
+    public boolean movePlayer(String direction) {
+        int newX = playerX;
+        int newY = playerY;
+
+        switch (direction.toLowerCase()) {
+            case "north": newY -= 1; break;
+            case "south": newY += 1; break;
+            case "west":  newX -= 1; break;
+            case "east":  newX += 1; break;
+            default:
+                System.out.println("Direction inconnue.");
+                return false;
+        }
+
+        if (newX >= 0 && newX < width && newY >= 0 && newY < height && map[newY][newX] != null) {
+            playerX = newX;
+            playerY = newY;
+            System.out.println(map[playerY][playerX].getDescription());
+            return true;
+        }
+
+        return false;
     }
 }
-
