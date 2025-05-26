@@ -1,5 +1,7 @@
 package main;
 
+import utils.IPrintable;
+
 public class WorldMap {
     private Location[][] map;
     private int width, height;
@@ -27,6 +29,8 @@ public class WorldMap {
         int newX = playerX;
         int newY = playerY;
 
+        /*méthode pour déplacer le joueur dans une direction (north, south, etc.) sur une carte en 2D.*/
+
         switch (direction.toLowerCase()) {
             case "north": newY -= 1; break;
             case "south": newY += 1; break;
@@ -46,4 +50,15 @@ public class WorldMap {
 
         return false;
     }
+
+    public IPrintable[][] getPrintableMap() {
+    IPrintable[][] printableMap = new IPrintable[height][width];
+    for (int y = 0; y < height; y++) {
+        for (int x = 0; x < width; x++) {
+            printableMap[y][x] = map[y][x]; // map[y][x] est une Zone qui implémente IPrintable
+        }
+    }
+    return printableMap;
+}
+
 }
