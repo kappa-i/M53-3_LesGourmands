@@ -2,7 +2,7 @@ package main;
 
 public class Help extends Command {
 
-    public Help(String name, String description) {
+    public Help() {
         super("help", "Affiche les commandes disponibles");
     }
 

@@ -4,7 +4,7 @@ public class Move extends Command {
     private Player player;
     private WorldMap worldMap;
 
-    public Move(String name, String description, Player player, WorldMap map) {
+    public Move(Player player, WorldMap map) {
         super("move", "Déplace le joueur dans une direction");
         this.player = player;
         this.worldMap = map;
