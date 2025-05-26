@@ -22,5 +22,3 @@ public class Move extends Command {
         }
     }
 }
-
-
