@@ -12,11 +12,11 @@ public class ShowMap extends Command {
 
     @Override
     public void execute(String[] args) {
-        Array2Dprinter.print2DArray(worldMap.getPrintableMap(),0,0);
+        int playerRow = worldMap.getPlayerY();
+        int playerCol = worldMap.getPlayerX();
 
-        System.out.println(Array2Dprinter.print2DArray(worldMap.getPrintableMap(),0,0));
+        System.out.println(Array2Dprinter.print2DArray(worldMap.getPrintableMap(), playerRow, playerCol));
+
     }
 
-    
 }
-

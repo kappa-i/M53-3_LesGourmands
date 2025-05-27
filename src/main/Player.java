@@ -28,12 +28,22 @@ public class Player {
         }
     }
 
-    // Permet d'inspecter les objets inspectables
-    public void interactWithItems() {
+    // Affiche les objets inspectables et non inspectables
+    public void inspectInventory() {
+        if (inventory.isEmpty()) {
+            System.out.println("Votre inventaire est vide.");
+            return;
+        }
+
         for (Item item : inventory) {
             if (item.canBeInspected()) {
-                System.out.println(item.inspect());
+                System.out.println("- " + item.getName() + " : " + item.inspect());
+            } else {
+                System.out.println("- " + item.getName() + " : Cet objet ne peut pas être inspecté.");
             }
         }
     }
+
+    
+
 }

@@ -10,14 +10,8 @@ public class Inspect extends Command {
 
     @Override
     public void execute(String[] args) {
-        player.interactWithItems();
+        player.inspectInventory(); // <- méthode plus complète
+
     }
 }
-
-
-
-/* public class Inspect extends Command {
-    
-    public void inspectObject();
-} */
 

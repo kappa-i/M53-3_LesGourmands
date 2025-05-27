@@ -21,6 +21,14 @@ public class WorldMap {
         return map[playerY][playerX];
     }
 
+    public int getPlayerX() {
+        return playerX;
+    }
+
+    public int getPlayerY() {
+        return playerY;
+    }
+
     public void setPlayerLocation(Location location) {
         map[playerY][playerX] = location;
     }
@@ -29,13 +37,24 @@ public class WorldMap {
         int newX = playerX;
         int newY = playerY;
 
-        /*méthode pour déplacer le joueur dans une direction (north, south, etc.) sur une carte en 2D.*/
+        /*
+         * méthode pour déplacer le joueur dans une direction (north, south, etc.) sur
+         * une carte en 2D.
+         */
 
         switch (direction.toLowerCase()) {
-            case "north": newY -= 1; break;
-            case "south": newY += 1; break;
-            case "west":  newX -= 1; break;
-            case "east":  newX += 1; break;
+            case "north":
+                newY -= 1;
+                break;
+            case "south":
+                newY += 1;
+                break;
+            case "west":
+                newX -= 1;
+                break;
+            case "east":
+                newX += 1;
+                break;
             default:
                 System.out.println("Direction inconnue.");
                 return false;
@@ -52,13 +71,13 @@ public class WorldMap {
     }
 
     public IPrintable[][] getPrintableMap() {
-    IPrintable[][] printableMap = new IPrintable[height][width];
-    for (int y = 0; y < height; y++) {
-        for (int x = 0; x < width; x++) {
-            printableMap[y][x] = map[y][x]; // map[y][x] est une Zone qui implémente IPrintable
+        IPrintable[][] printableMap = new IPrintable[height][width];
+        for (int y = 0; y < height; y++) {
+            for (int x = 0; x < width; x++) {
+                printableMap[y][x] = map[y][x]; // map[y][x] est une Zone qui implémente IPrintable
+            }
         }
+        return printableMap;
     }
-    return printableMap;
-}
 
 }

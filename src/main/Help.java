@@ -13,6 +13,7 @@ public class Help extends Command {
         System.out.println("- move <direction> : Déplace le joueur");
         System.out.println("- inspect : Inspecte les objets de l'inventaire");
         System.out.println("- take : Ramasse un objet dans la pièce");
+        System.out.println("- look : Affiche les objets et la description de la zone");
     }
 }
 
