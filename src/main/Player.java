@@ -44,6 +44,9 @@ public class Player {
         }
     }
 
-    
+    public ArrayList<Item> getInventory() {
+    return inventory;
+}
+
 
 }

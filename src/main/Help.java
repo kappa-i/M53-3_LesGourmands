@@ -14,6 +14,7 @@ public class Help extends Command {
         System.out.println("- inspect : Inspecte les objets de l'inventaire");
         System.out.println("- take : Ramasse un objet dans la pièce");
         System.out.println("- look : Affiche les objets et la description de la zone");
+        System.out.println("- unlock : Permet de débloquer une zone si vous avezune clé dans l'inventaire");
     }
 }
 

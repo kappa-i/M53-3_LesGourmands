@@ -11,7 +11,11 @@ public class Look extends Command {
     @Override
     public void execute(String[] args) {
         Location current = map.getPlayerLocation();
-
+        
+        if (current.isLocked()) {
+        System.out.println("Cette zone est verrouillée. Vous ne pouvez pas la regarder.");
+        return;
+    }
         System.out.println(current.getDescription());
 
         if (current.getItems().isEmpty()) {

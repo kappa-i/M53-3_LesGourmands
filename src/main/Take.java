@@ -14,6 +14,11 @@ public class Take extends Command {
     @Override
     public void execute(String[] args) {
         Location currentLocation = map.getPlayerLocation();
+
+        if (currentLocation.isLocked()) {
+        System.out.println("Cette zone est verrouillée. Vous ne pouvez rien prendre.");
+        return;
+    }
         if (currentLocation.getItems().isEmpty()) {
             System.out.println("Il n'y a rien à prendre ici.");
         } else {
@@ -25,10 +30,3 @@ public class Take extends Command {
     }
 }
 
-
-
-/* public class Take {
-    
-    public void putObjectInInvenrory();
-
-} */

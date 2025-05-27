@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import utils.IPrintable;
 
-public class Location implements IPrintable{
+public class Location implements IPrintable {
     private String name;
     private String description;
     private boolean isLocked;
@@ -27,6 +27,14 @@ public class Location implements IPrintable{
 
     public boolean isLocked() {
         return isLocked;
+    }
+
+    public void unlock() {
+        isLocked = false;
+    }
+
+    public void lock() {
+        isLocked = true;
     }
 
     public ArrayList<Item> getItems() {
