@@ -11,12 +11,12 @@ public class Move extends Command {
     }
 
     @Override
-    public void execute(String[] args) {
-        if (args.length < 2) {
+    public void execute(String[] directions) {
+        if (directions.length < 2) {
             System.out.println("Usage: move <north|south|east|west>");
             return;
         }
-        String direction = args[1];
+        String direction = directions[1];
         if (!worldMap.movePlayer(direction)) {
             System.out.println("Impossible d'aller là !");
         }

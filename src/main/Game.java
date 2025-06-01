@@ -24,9 +24,13 @@ public class Game {
         worldMap.addLocation(room3, 1, 1);
         worldMap.setPlayerLocation(room1);
 
-        // Ajout d'items dans l'inventaire
-        player.addItem(new Key("Clé", "Cette clé permet de déverouiller une zone"));
+        
+        // Création d'énigmes
+        Puzzle p1 = new Puzzle("Puzzle1","Un vieux parchemin tah Djibril.","Qui est-ce qui se fait le plus djoufara ?","Djibril");
 
+        // Ajout d'items
+        player.addItem(new Key("Clé", "Cette clé permet de déverouiller une zone"));
+        room1.addItem(p1);
 
         // Enregistrement des commandes
         commandRegistry.registerCommand(new Help());
@@ -36,9 +40,7 @@ public class Game {
         commandRegistry.registerCommand(new ShowMap(worldMap));
         commandRegistry.registerCommand(new Look(worldMap));
         commandRegistry.registerCommand(new Unlock(player, worldMap));
-
-
-
+        commandRegistry.registerCommand(new Solve(player));
     }
 
     public void run() {
