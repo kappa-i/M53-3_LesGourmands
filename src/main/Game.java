@@ -11,11 +11,11 @@ public class Game {
 
     public Game() {
         player = new Player();
-        worldMap = new WorldMap(6, 6);
+        worldMap = new WorldMap(6, 2);
         commandRegistry = new CommandRegistry();
 
         // Création d'une pièce
-        Location room1 = new Location("Aisschiat Street", "Vous êtes à Aisschiat Street", false);
+        Location room1 = new Location("Aisschat Street", "Vous êtes à Aisschiat Street", false);
         Location room2 = new Location("Gabwaaay Bay", "Vous êtes à Gabwaaay Bay", false);
         Location room3 = new Location("Dibiril House", "Vous êtes à Dibiril House", true);
         Location room4 = new Location("Eko CoffeeShop", "Vous êtes à Eko CoffeeShop", true);
@@ -24,9 +24,9 @@ public class Game {
         Location room7 = new Location("Pierre Stone", "Vous êtes à Pierre Stone", true);
         Location room8 = new Location("Tialoka Arena", "Vous êtes à Tialoka Arena", true);
         Location room9 = new Location("Vieux Port de Raul", "Vous êtes à Vieux Port de Raul", true);
-        Location room10 = new Location("CilsByCarla", "Vous êtes à CilsByCarla", true);
+        Location room10 = new Location("CilsByCarla", "Vous êtes à CilsByCarla", false);
         Location room11 = new Location("F2SS Hall", "Vous êtes à F2SS Hall", true);
-        Location room12 = new Location("Alex GameCenter", "Vous êtes à Alex GameCenter", true);
+        Location room12 = new Location("Alex GameCenter", "Vous êtes à Alex GameCenter", false);
 
 
 
@@ -36,19 +36,48 @@ public class Game {
         worldMap.addLocation(room3, 2, 0);
         worldMap.addLocation(room4, 3, 0);
         worldMap.addLocation(room5, 4, 0);
-        worldMap.addLocation(room6, 0, 1);
-        worldMap.addLocation(room7, 0, 2);
-        worldMap.addLocation(room8, 0, 3);
+        worldMap.addLocation(room6, 5, 0);
+        worldMap.addLocation(room7, 0, 1); 
+        worldMap.addLocation(room8, 1, 1);
+        worldMap.addLocation(room9, 2, 1);
+        worldMap.addLocation(room10, 3, 1);
+        worldMap.addLocation(room11, 4, 1);
+        worldMap.addLocation(room12, 5, 1);
 
         worldMap.setPlayerLocation(room1);
 
         
         // Création d'énigmes
-        Puzzle p1 = new Puzzle("Puzzle1","Un vieux parchemin tah Djibril.","Qui est-ce qui se fait le plus djoufara ?","Djibril");
+        Puzzle p1 = new Puzzle("EnigmeAissya","Le plat","Quel est le plat préféré de Aissya ? : \n 1. Lablabi \n 2. Sushi \n 3. Fricassé" ,"Lablabi");
+        Puzzle p2 = new Puzzle("EnigmeGabriel","Mesurons Gab","Quel est la taille de Gabriel ? : \n 1. 1m65 \n 2. 1m70 \n 3. 1m75" ,"1m75");
+        Puzzle p3 = new Puzzle("EnigmeDjibril","Langues de Djibril","Combien de langues parles Djibril : \n 1. 2 \n 2. 3 \n 3. 4" ,"3");
+        Puzzle p4 = new Puzzle("EnigmeCindy","L'animal","En basket, Cindy a fait parti d'une équipe de : \n 1. 1erLigue \n 2. LigueA \n 3. 3èmeLigue" ,"1erLigue");
+        Puzzle p5 = new Puzzle("EnigmeNuno","Le prénom","Quel est le deuxième prénom de Nuno ? : \n 1. José \n 2. Guilherme \n 3. João" ,"Guilherme");
+        Puzzle p6 = new Puzzle("EnigmeMathias","Un média","Quel est le nom de l'entreprise de Mathias ? : \n 1. Blurrd.ch \n 2. BlurrdVision \n 3. BlurrdCapture" ,"Blurrd.ch");
+        Puzzle p7 = new Puzzle("EnigmePierre","Parcours professionnel","Quel est le CFC qu'a eu Pierre avant de venir à l'HEIG-VD ? : \n 1. Graphiste \n 2. Garagiste \n 3. Médiamaticien" ,"Graphiste");
+        Puzzle p8 = new Puzzle("EnigmeLuka","L'appelation","Quel est le surnom de Luka : \n 1. Poire \n 2. Pastèque \n 3. Pomme" ,"Pomme");
+        Puzzle p9 = new Puzzle("EnigmeRaul","Le rappeur","Quel est le rappeur préféré de Raul ? : \n 1. Alonzo \n 2. JUL \n 3. NAPS" ,"JUL");
+        Puzzle p10 = new Puzzle("EnigmeCarla","","Quels sont les origines de Carla ? : \n 1. Maroc & Guadloupe \n 2. Liban & Jamaique \n 3. Vietnam & Bresil" ,"Liban & Jamaique");
+        Puzzle p11 = new Puzzle("EnigmeMatteo","F2SS","Le média de Matteo, de quoi parle-t-il ? : \n 1. Rap \n 2. Actu \n 3. Mode" ,"Rap");
+        Puzzle p12 = new Puzzle("EnigmeAlex","La victoire","A quel jeu Alex est-il champion de Suisse romande ? : \n 1. LeagueOfLegend \n 2. Valorant \n 3. CallOfDuty" ,"LeagueOfLegend");
+
+
 
         // Ajout d'items
         player.addItem(new Key("Clé", "Cette clé permet de déverouiller une zone"));
         room1.addItem(p1);
+        room2.addItem(p2);
+        room3.addItem(p3);
+        room4.addItem(p4);
+        room5.addItem(p5);
+        room6.addItem(p6);
+        room7.addItem(p7);
+        room8.addItem(p8);
+        room9.addItem(p9);
+        room10.addItem(p10);
+        room11.addItem(p11);
+        room12.addItem(p12);
+
 
         // Enregistrement des commandes
         commandRegistry.registerCommand(new Help());
