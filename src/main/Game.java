@@ -11,13 +11,17 @@ public class Game {
 
     public Game() {
         player = new Player();
-        worldMap = new WorldMap(5, 5);
+        worldMap = new WorldMap(6, 6);
         commandRegistry = new CommandRegistry();
 
         // Création d'une pièce
-        Location room1 = new Location("Room1", "You are in a dark room.", false);
+        Location room1 = new Location("Room1", "Vous êtes dans la room", false);
         Location room2 = new Location("Room2", "You are in a Light room.", false);
         Location room3 = new Location("room3", "You are in the room 3", true);
+        Location room3 = new Location("room4", "You are in the room 3", true);
+        Location room3 = new Location("room5", "You are in the room 3", true);
+        Location room3 = new Location("room6", "You are in the room 3", true);
+
         room1.addItem(new Letter("Letter", "The treasure is east."));
         worldMap.addLocation(room1, 0, 0);
         worldMap.addLocation(room2, 1, 0);
