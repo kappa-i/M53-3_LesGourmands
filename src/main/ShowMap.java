@@ -6,7 +6,7 @@ public class ShowMap extends Command {
     private WorldMap worldMap;
 
     public ShowMap(WorldMap worldMap) {
-        super("map", "Affiche la carte du mmaponde");
+        super("map", "Affiche la carte du monde");
         this.worldMap = worldMap;
     }
 
