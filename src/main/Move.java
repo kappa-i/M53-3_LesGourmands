@@ -1,5 +1,7 @@
 package main;
 
+import utils.Array2Dprinter;
+
 public class Move extends Command {
     private Player player;
     private WorldMap worldMap;
@@ -19,6 +21,13 @@ public class Move extends Command {
         String direction = directions[1];
         if (!worldMap.movePlayer(direction)) {
             System.out.println("Impossible d'aller là !");
+        } else {
+            // Affiche la carte après un déplacement réussi
+            System.out.println(Array2Dprinter.print2DArray(
+                worldMap.getPrintableMap(),
+                worldMap.getPlayerY(),
+                worldMap.getPlayerX()
+            ));
         }
     }
 }
