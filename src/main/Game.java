@@ -15,17 +15,17 @@ public class Game {
         commandRegistry = new CommandRegistry();
 
         // Création d'une pièce
-        Location room1 = new Location("Room1", "Vous êtes dans la room", false);
-        Location room2 = new Location("Room2", "You are in a Light room.", false);
-        Location room3 = new Location("room3", "You are in the room 3", true);
-        Location room3 = new Location("room4", "You are in the room 3", true);
-        Location room3 = new Location("room5", "You are in the room 3", true);
-        Location room3 = new Location("room6", "You are in the room 3", true);
+        Location room1 = new Location("Aisschiat Street", "Vous êtes à “Aisschiat Street“", false);
+        Location room2 = new Location("Gabwaaay Bay", "Vous êtes à “Gabwaaay Bay“", false);
+        Location room3 = new Location("Dibiril House", "Vous êtes à “Dibiril House“", true);
+        Location room4 = new Location("Savane Gigi", "Vous êtes à “Savane Gigi“", true);
+
 
         room1.addItem(new Letter("Letter", "The treasure is east."));
         worldMap.addLocation(room1, 0, 0);
         worldMap.addLocation(room2, 1, 0);
         worldMap.addLocation(room3, 1, 1);
+        worldMap.addLocation(room4, 1, 2);
         worldMap.setPlayerLocation(room1);
 
         
