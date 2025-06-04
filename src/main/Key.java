@@ -12,7 +12,7 @@ public class Key extends Item {
 
     @Override
     public String inspect() {
-        return "This is a key.";
+        return this.description;
     }
 
     @Override

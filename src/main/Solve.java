@@ -1,6 +1,5 @@
 package main;
 
-
 public class Solve extends Command {
     private Player player;
 
@@ -11,18 +10,20 @@ public class Solve extends Command {
 
     @Override
     public void execute(String[] args) {
-        boolean found = false;
+        if (args.length < 2) {
+            System.out.println("Utilisation : solve <nom_du_puzzle>");
+            return;
+        }
+
+        String puzzleName = args[1].toLowerCase();
 
         for (Item item : player.getInventory()) {
-            if (item instanceof Puzzle) {
+            if (item instanceof Puzzle && item.getName().toLowerCase().equals(puzzleName)) {
                 ((Puzzle) item).solve();
-                found = true;
-                break;
+                return;
             }
         }
 
-        if (!found) {
-            System.out.println("Aucun puzzle à résoudre dans l'inventaire.");
-        }
+        System.out.println("Puzzle '" + puzzleName + "' non trouvé dans l'inventaire.");
     }
 }

@@ -6,12 +6,18 @@ public class Puzzle extends Item {
     private String question;
     private String answer;
     private boolean resolved = false;
+    private Key reward;
+    private Player player; 
 
-    public Puzzle(String name, String description, String question, String answer) {
-        super(name, description);
-        this.question = question;
-        this.answer = answer.toLowerCase();
-    }
+
+    public Puzzle(String name, String description, String question, String answer, Key reward, Player player) {
+    super(name, description);
+    this.question = question;
+    this.answer = answer.toLowerCase();
+    this.reward = reward;
+    this.player = player;
+}
+
 
     @Override
     public boolean canBeInspected() {
@@ -23,7 +29,7 @@ public class Puzzle extends Item {
         if (resolved) {
             return "Puzzle déjà résolu.";
         }
-        return "Énigme : " + question;
+        return "Énigme : " + question + "\n takeutiliser la commande <solve> pour donner la réponse";
     }
 
     public void solve() {
@@ -40,6 +46,9 @@ public class Puzzle extends Item {
         if (input.equals(answer)) {
             resolved = true;
             System.out.println("Bonne réponse ! Puzzle résolu !");
+            player.addItem(reward);
+            System.out.println("Vous avez reçu une clé !");
+            player.removeItem(this.name);
         } else {
             System.out.println("Mauvaise réponse.");
         }

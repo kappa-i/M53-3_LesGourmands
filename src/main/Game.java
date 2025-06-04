@@ -48,22 +48,41 @@ public class Game {
 
         
         // Création d'énigmes
-        Puzzle p1 = new Puzzle("EnigmeAissya","Le plat","Quel est le plat préféré de Aissya ? : \n - Lablabi \n - Sushi \n - Fricassé" ,"Lablabi");
-        Puzzle p2 = new Puzzle("EnigmeGabriel","Mesurons Gab","Quel est la taille de Gabriel ? : \n - 1m65 \n - 1m70 \n - 1m75" ,"1m75");
-        Puzzle p3 = new Puzzle("EnigmeDjibril","Langues de Djibril","Combien de langues parles Djibril : \n - 2 \n - 3 \n - 4" ,"3");
-        Puzzle p4 = new Puzzle("EnigmeCindy","L'animal","En basket, Cindy a fait parti d'une équipe de : \n - 1erLigue \n - LigueA \n - 3èmeLigue" ,"1erLigue");
-        Puzzle p5 = new Puzzle("EnigmeNuno","Le prénom","Quel est le deuxième prénom de Nuno ? : \n - José \n - Guilherme \n - João" ,"Guilherme");
-        Puzzle p6 = new Puzzle("EnigmeMathias","Un média","Quel est le nom de l'entreprise de Mathias ? : \n - Blurrd.ch \n - BlurrdVision \n - BlurrdCapture" ,"Blurrd.ch");
-        Puzzle p7 = new Puzzle("EnigmePierre","Parcours professionnel","Quel est le CFC qu'a eu Pierre avant de venir à l'HEIG-VD ? : \n - Graphiste \n - Garagiste \n - Médiamaticien" ,"Graphiste");
-        Puzzle p8 = new Puzzle("EnigmeLuka","L'appelation","Quel est le surnom de Luka : \n - Poire \n - Pastèque \n - Pomme" ,"Pomme");
-        Puzzle p9 = new Puzzle("EnigmeRaul","Le rappeur","Quel est le rappeur préféré de Raul ? : \n - Alonzo \n - JUL \n - NAPS" ,"JUL");
-        Puzzle p10 = new Puzzle("EnigmeCarla","","Quels sont les origines de Carla ? : \n - Maroc & Guadloupe \n - Liban & Jamaique \n - Vietnam & Bresil" ,"Liban & Jamaique");
-        Puzzle p11 = new Puzzle("EnigmeMatteo","F2SS","Le média de Matteo, de quoi parle-t-il ? : \n - Rap \n - Actu \n - Mode" ,"Rap");
-        Puzzle p12 = new Puzzle("EnigmeAlex","La victoire","A quel jeu Alex est-il champion de Suisse romande ? : \n - LeagueOfLegend \n - Valorant \n - CallOfDuty" ,"LeagueOfLegend");
+        Puzzle p1 = new Puzzle("EnigmeAissya","Le plat","Quel est le plat préféré de Aissya ? : \n - Lablabi \n - Sushi \n - Fricassé" ,"Lablabi", new Key("cléAissya", "Une clé gagnée"),player);
+        
+        Puzzle p2 = new Puzzle("EnigmeGabriel","Mesurons Gab","Quel est la taille de Gabriel ? : \n - 1m65 \n - 1m70 \n - 1m75" ,"1m75", new Key("cléGab", "Une clé gagnée"),player);
+        
+        Puzzle p3 = new Puzzle("EnigmeDjibril","Langues de Djibril","Combien de langues parles Djibril : \n - 2 \n - 3 \n - 4" ,"3", new Key("cléDjib", "Une clé gagnée"),player);
+        
+        Puzzle p4 = new Puzzle("EnigmeCindy","L'animal","En basket, Cindy a fait parti d'une équipe de : \n - 1erLigue \n - LigueA \n - 3èmeLigue" ,"1erLigue", new Key("cléCindy", "Une clé gagnée"),player);
+        
+        Puzzle p5 = new Puzzle("EnigmeNuno","Le prénom","Quel est le deuxième prénom de Nuno ? : \n - José \n - Guilherme \n - João" ,"Guilherme", new Key("cléNuno", "Une clé gagnée"),player);
+        
+        
+        Puzzle p6 = new Puzzle("EnigmeMathias","Un média","Quel est le nom de l'entreprise de Mathias ? : \n - Blurrd.ch \n - BlurrdVision \n - BlurrdCapture" ,"Blurrd.ch", new Key("cléMathias", "Une clé gagnée"),player);
+        
+        
+        Puzzle p7 = new Puzzle("EnigmePierre","Parcours professionnel","Quel est le CFC qu'a eu Pierre avant de venir à l'HEIG-VD ? : \n - Graphiste \n - Garagiste \n - Médiamaticien" ,"Graphiste", new Key("cléPierre", "Une clé gagnée"),player);
+        
+        
+        Puzzle p8 = new Puzzle("EnigmeLuka","L'appelation","Quel est le surnom de Luka : \n - Poire \n - Pastèque \n - Pomme" ,"Pomme", new Key("cléLuka", "Une clé gagnée"),player);
+        
+        
+        Puzzle p9 = new Puzzle("EnigmeRaul","Le rappeur","Quel est le rappeur préféré de Raul ? : \n - Alonzo \n - JUL \n - NAPS" ,"JUL", new Key("cléRaul", "Une clé gagnée"),player);
+        
+        
+        Puzzle p10 = new Puzzle("EnigmeCarla","","Quels sont les origines de Carla ? : \n - Maroc & Guadloupe \n - Liban & Jamaique \n - Vietnam & Bresil" ,"Liban & Jamaique", new Key("cléCarla", "Une clé gagnée"),player);
+        
+        
+        Puzzle p11 = new Puzzle("EnigmeMatteo","F2SS","Le média de Matteo, de quoi parle-t-il ? : \n - Rap \n - Actu \n - Mode" ,"Rap", new Key("cléMatteo", "Une clé gagnée"),player);
+        
+        
+        Puzzle p12 = new Puzzle("EnigmeAlex","La victoire","A quel jeu Alex est-il champion de Suisse romande ? : \n - LeagueOfLegend \n - Valorant \n - CallOfDuty" ,"LeagueOfLegend", new Key("cléAlex", "Une clé gagnée"),player);
+        
         
 
         // Ajout d'items
-        player.addItem(new Key("Clé", "Cette clé permet de déverouiller une zone"));
+        player.addItem(new Key("Cle", "Cette clé permet de déverouiller une zone"));
         room1.addItem(p1);
         room2.addItem(p2);
         room3.addItem(p3);
@@ -81,6 +100,7 @@ public class Game {
         // Enregistrement des commandes
         commandRegistry.registerCommand(new Help());
         commandRegistry.registerCommand(new Move(player, worldMap));
+        commandRegistry.registerCommand(new Inventory(player));
         commandRegistry.registerCommand(new Inspect(player));
         commandRegistry.registerCommand(new Take(player, worldMap));
         commandRegistry.registerCommand(new ShowMap(worldMap));

@@ -7,7 +7,7 @@ public class Letter extends Item {
 
     @Override
     public String inspect() {
-        return "Lettre : " + description;
+        return description;
     }
 }
 

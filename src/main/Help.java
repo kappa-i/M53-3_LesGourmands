@@ -11,24 +11,12 @@ public class Help extends Command {
         System.out.println("Commandes disponibles :");
         System.out.println("- help : Affiche les commandes disponibles");
         System.out.println("- move <direction> : Déplace le joueur");
-        System.out.println("- inspect : Inspecte les objets de l'inventaire");
+        System.out.println("- inspect : Affiche les objets dans l'inventaire");
+        System.out.println("- inspect <item> : Donne la description d'un objet");
         System.out.println("- take : Ramasse un objet dans la pièce");
         System.out.println("- look : Affiche les objets et la description de la zone");
         System.out.println("- unlock : Permet de débloquer une zone si vous avezune clé dans l'inventaire");
         System.out.println("- solve : Permet de résoudre une énigme");
     }
 }
-
-
-
-
-/* import java.util.ArrayList;
-
-public class Help extends Command {
-
-    ArrayList<String> helpInfo = new ArrayList<>();
-
-    public void displayHelpInfo();
-
-} */
 
