@@ -17,6 +17,16 @@ public class WorldMap {
         map[y][x] = location;
     }
 
+    public void setPlayerStartPosition(int x, int y) {
+    if (x >= 0 && x < width && y >= 0 && y < height && map[y][x] != null) {
+        playerX = x;
+        playerY = y;
+    } else {
+        System.out.println("Position de départ invalide !");
+    }
+}
+
+
     public Location getPlayerLocation() {
         return map[playerY][playerX];
     }

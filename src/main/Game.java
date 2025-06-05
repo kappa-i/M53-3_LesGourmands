@@ -64,7 +64,7 @@ public class Game {
         worldMap.addLocation(room12, 2, 5);
         worldMap.addLocation(finish, 5, 1);
  
-        worldMap.setPlayerLocation(start);
+    worldMap.setPlayerStartPosition(0, 0); // ← ou n'importe quelle coordonnée valide
 
         
         // Création d'énigmes
