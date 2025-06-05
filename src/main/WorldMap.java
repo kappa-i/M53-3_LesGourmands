@@ -29,18 +29,24 @@ public class WorldMap {
         return playerY;
     }
 
-    public void setPlayerLocation(Location location) {
-        map[playerY][playerX] = location;
+    public void teleportTo(Location destination) {
+    for (int y = 0; y < height; y++) {
+        for (int x = 0; x < width; x++) {
+            if (map[y][x] == destination) {
+                playerX = x;
+                playerY = y;
+                System.out.println(destination.getDescription());
+                return;
+            }
+        }
     }
+    System.out.println("Impossible de se téléporter : destination introuvable sur la carte.");
+}
+
 
     public boolean movePlayer(String direction) {
         int newX = playerX;
         int newY = playerY;
-
-        /*
-         * méthode pour déplacer le joueur dans une direction (north, south, etc.) sur
-         * une carte en 2D.
-         */
 
         switch (direction.toLowerCase()) {
             case "north":
@@ -79,5 +85,18 @@ public class WorldMap {
         }
         return printableMap;
     }
+
+    public Location getLocationByName(String name) {
+    for (int y = 0; y < height; y++) {
+        for (int x = 0; x < width; x++) {
+            Location loc = map[y][x];
+            if (loc != null && loc.getName().equalsIgnoreCase(name)) {
+                return loc;
+            }
+        }
+    }
+    return null;
+}
+
 
 }

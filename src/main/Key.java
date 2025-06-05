@@ -1,8 +1,16 @@
 package main;
 public class Key extends Item {
 
-    public Key(String name, String description) {
+    private String targetZoneName;  // Nom exact de la zone que la clé peut ouvrir
+
+
+    public Key(String name, String description, String targetZoneName) {
         super(name, description);
+        this.targetZoneName = targetZoneName;
+    }
+
+    public String getTargetZoneName() {
+        return targetZoneName;
     }
 
     @Override
@@ -24,6 +32,7 @@ public class Key extends Item {
     public void drop() {
         System.out.println(name + " dropped.");
     }
+
 }
 /* public class Key extends Item {
     

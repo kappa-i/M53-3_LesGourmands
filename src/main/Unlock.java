@@ -21,14 +21,17 @@ public class Unlock extends Command {
 
         for (Item item : player.getInventory()) {
             if (item instanceof Key) {
-                current.unlock();
-                player.removeItem(item.getName());
-                System.out.println("Zone déverrouillée avec la clé : " + item.getName());
-                return;
+                Key key = (Key) item;
+                if (key.getTargetZoneName().equalsIgnoreCase(current.getName())) {
+                    current.unlock();
+                    player.removeItem(key.getName());
+                    System.out.println("Zone déverrouillée avec la clé : " + key.getName());
+                    return;
+                }
             }
         }
 
-        System.out.println("Vous n'avez pas de clé pour déverrouiller cette zone.");
+        System.out.println("Vous n'avez pas la bonne clé pour cette zone.");
     }
-}
 
+}

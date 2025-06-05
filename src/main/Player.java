@@ -29,20 +29,18 @@ public class Player {
     }
 
     public void listInventoryItems() {
-    if (inventory.isEmpty()) {
-        System.out.println("Votre inventaire est vide.");
-    } else {
-        System.out.println("Objets dans votre inventaire :");
-        for (Item item : inventory) {
-            System.out.println("- " + item.getName());
+        if (inventory.isEmpty()) {
+            System.out.println("Votre inventaire est vide.");
+        } else {
+            System.out.println("Objets dans votre inventaire :");
+            for (Item item : inventory) {
+                System.out.println("- " + item.getName());
+            }
         }
     }
-}
-
 
     public ArrayList<Item> getInventory() {
-    return inventory;
-}
-
+        return inventory;
+    }
 
 }
