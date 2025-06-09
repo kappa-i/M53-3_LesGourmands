@@ -29,23 +29,23 @@ public class Puzzle extends Item {
         if (resolved) {
             return "Puzzle déjà résolu.";
         }
-        return "Énigme : " + question + "\n takeutiliser la commande <solve> pour donner la réponse";
+        return "Utiliser la commande <solve> pour résoudre cette énigme";
     }
 
     public void solve() {
         if (resolved) {
-            System.out.println("Ce puzzle est déjà résolu.");
+            System.out.println("Cette énigme est déjà résolu.");
             return;
         }
 
-        System.out.println("Puzzle : " + question);
+        System.out.println("Énigme : " + question);
         Scanner scanner = new Scanner(System.in);
         System.out.print("Votre réponse : ");
         String input = scanner.nextLine().toLowerCase();
 
         if (input.equals(answer)) {
             resolved = true;
-            System.out.println("Bonne réponse ! Puzzle résolu !");
+            System.out.println("Bonne réponse ! Énigme résolue !");
             player.addItem(reward);
             System.out.println("Vous avez reçu une clé !");
             player.removeItem(this.name);

@@ -1,5 +1,7 @@
 package main;
 
+import utils.Array2Dprinter;
+
 public class Teleport extends Command {
     private Player player;
     private WorldMap worldMap;
@@ -25,18 +27,25 @@ public class Teleport extends Command {
             return;
         }
 
-        // Vérifie si le joueur a un téléporteur correspondant
+        if (destination.isLocked()) {
+            System.out.println("Cette zone est verrouillée. Vous ne pouvez pas vous y téléporter.");
+            return;
+        }
+
+        // Vérifie si le joueur possède un téléporteur
         for (Item item : player.getInventory()) {
             if (item instanceof Teleporter) {
-                Teleporter tp = (Teleporter) item;
-                if (tp.getTargetLocationName().equalsIgnoreCase(destinationName)) {
-                    worldMap.teleportTo(destination);
-                    System.out.println("Vous vous êtes téléporté à " + destinationName);
-                    return;
-                }
+                worldMap.teleportTo(destination);
+                System.out.println("Vous vous êtes téléporté à " + destinationName);
+                 System.out.println(Array2Dprinter.print2DArray(
+                worldMap.getPrintableMap(),
+                worldMap.getPlayerY(),
+                worldMap.getPlayerX()
+            ));
+                return;
             }
         }
 
-        System.out.println("Vous n'avez pas de téléporteur pour cette destination.");
+        System.out.println("Vous n'avez pas de téléporteur.");
     }
 }

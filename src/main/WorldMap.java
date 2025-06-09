@@ -38,7 +38,7 @@ public class WorldMap {
     public int getPlayerY() {
         return playerY;
     }
-
+/* */
     public void teleportTo(Location destination) {
     for (int y = 0; y < height; y++) {
         for (int x = 0; x < width; x++) {
@@ -50,7 +50,6 @@ public class WorldMap {
             }
         }
     }
-    System.out.println("Impossible de se téléporter : destination introuvable sur la carte.");
 }
 
 

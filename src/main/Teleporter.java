@@ -3,9 +3,8 @@ package main;
 public class Teleporter extends Item {
     private String targetLocationName;
 
-    public Teleporter(String name, String description, String targetLocationName) {
+    public Teleporter(String name, String description) {
         super(name, description);
-        this.targetLocationName = targetLocationName;
     }
 
     public String getTargetLocationName() {

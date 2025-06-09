@@ -11,7 +11,7 @@ public class Solve extends Command {
     @Override
     public void execute(String[] args) {
         if (args.length < 2) {
-            System.out.println("Utilisation : solve <nom_du_puzzle>");
+            System.out.println("Utilisation : solve <nom_de_l'énigme>");
             return;
         }
 
@@ -24,6 +24,6 @@ public class Solve extends Command {
             }
         }
 
-        System.out.println("Puzzle '" + puzzleName + "' non trouvé dans l'inventaire.");
+        System.out.println("Énigme '" + puzzleName + "' non trouvé dans l'inventaire.");
     }
 }
