@@ -11,22 +11,20 @@ public class Player {
         item.addToInventory();
     }
 
-    // Supprime un objet de l'inventaire
-    public void removeItem(String itemName) {
-        inventory.removeIf(item -> item.getName().equals(itemName));
+   public void removeItem(String itemName) {
+    for (int i = 0; i < inventory.size(); i++) {
+        if (inventory.get(i).getName().equals(itemName)) {
+            inventory.remove(i);
+            break;
+        }
     }
+}
+
 
     // Affiche le nouvel emplacement du joueur
     public void moveToLocation(Location location) {
         System.out.println("You moved to: " + location.getDescription());
-    }
-
-    // Affiche les objets de l'inventaire
-    public void openInventory() {
-        for (Item item : inventory) {
-            System.out.println("- " + item.getName());
-        }
-    }
+    }   
 
     public void listInventoryItems() {
         if (inventory.isEmpty()) {

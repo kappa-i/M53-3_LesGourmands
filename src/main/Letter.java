@@ -12,10 +12,3 @@ public class Letter extends Item {
 }
 
 
-/* 
-public class Letter extends Item {
-     public Letter (String name) {
-        super(name);
-    }
- */   
-

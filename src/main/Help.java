@@ -18,6 +18,8 @@ public class Help extends Command {
         System.out.println("- unlock : Permet de débloquer une zone si vous avezune clé dans l'inventaire");
         System.out.println("- solve : Permet de résoudre une énigme");
         System.out.println("- teleport <nom_de_zone>: Permet de vous téléporter à une zone");
+        System.out.println("- drop <objet> : Dépose un objet de l'inventaire dans la zone");
+
     }
 }
 

@@ -117,7 +117,7 @@ public class Game {
         room10.addItem(p10);
         room11.addItem(p11);
         room12.addItem(p12);
-        start.addItem(tp);
+        room10.addItem(tp);
 
 
         // Enregistrement des commandes
@@ -131,6 +131,7 @@ public class Game {
         commandRegistry.registerCommand(new Unlock(player, worldMap));
         commandRegistry.registerCommand(new Solve(player));
         commandRegistry.registerCommand(new Teleport(player, worldMap));
+        commandRegistry.registerCommand(new Drop(player, worldMap));
 
     }
 
@@ -141,7 +142,7 @@ public class Game {
             System.out.print("> ");
             String input = scanner.nextLine();
             commandRegistry.executeCommand(input);
-            /*objet qui connaît toutes les commandes du jeu (move, look, help, etc.) */
+            
         }
     }
 }
